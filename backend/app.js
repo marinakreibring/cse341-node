@@ -1,8 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
-//const MongoClient = require('mongodb').MongoClient;
-_db = client.db();
+const MongoClient = require('mongodb').MongoClient;
 const mongodb = require('./db/connect');
 const professionalRoutes = require('./routes/professional');
 
@@ -17,12 +16,11 @@ app
   })
   .use('/professional', professionalRoutes);
 
-
-initDb((err, mongodb) => {
+mongodb.initDb((err, mongodb) => {
   if (err) {
-    console.error('Failed to connect to DB', err);
+    console.log(err);
   } else {
-    console.log('DB connected');
-    // тут можно работать с db
+    app.listen(port);
+    console.log(`Connected to DB and listening on ${port}`);
   }
 });
