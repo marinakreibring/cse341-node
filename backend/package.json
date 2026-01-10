@@ -2,9 +2,9 @@
   "name": "project1",
   "version": "1.0.0",
   "description": "Contacts API for CSE 341",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
