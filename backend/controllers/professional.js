@@ -17,12 +17,14 @@ const getAll = async (req, res) => {
   }
 };
 
-const getSingle = async (req, res, next) => {
-  const result = await mongodb.getDb().db().collection('professional').find();
-  result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists[0]); // we just need the first one (the only one)
-  });
+const getSingle = async (req, res) => {
+  const result = await mongodb
+    .getDb()
+    .db()
+    .collection('professional')
+    .findOne();
+
+  res.status(200).json(result);
 };
 
 
