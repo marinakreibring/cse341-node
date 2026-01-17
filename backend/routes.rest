@@ -2,4 +2,30 @@
 GET http://localhost:8080/professional
 
 ### Returns a single professional document by MongoDB ObjectId
-GET http://localhost:8080/professional/6963cf8332df10a5a2ff50d8
+GET http://localhost:8080/professional/696bd29c57b4f0df5bf1c522
+
+### Creates a new professional document
+POST http://localhost:8080/professional
+Content-Type: application/json
+
+{    
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "testmail@test.com",
+    "favoriteColor": "blue",
+    "birthday": "1990-01-01"
+}
+### Updates an existing professional document by MongoDB ObjectId
+PUT http://localhost:8080/professional/696bdd8d51a2014dc6f7ba76
+Content-Type: application/json
+
+{
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "email": "testmailchange@example.com",
+    "favoriteColor": "blue",
+    "birthday": "1990-01-01"
+}
+### Deletes a professional document by MongoDB ObjectId
+DELETE http://localhost:8080/professional/696bd51c51a2014dc6f7ba75
+
