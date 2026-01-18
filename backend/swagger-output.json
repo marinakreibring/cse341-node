@@ -5,14 +5,11 @@
     "description": "API for managing users",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "cse341-node-ofy0.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "http",
-    "https"
-  ],
+  "schemes": ["https"],
   "paths": {
-    "/professional/": {
+    "/professional": {
       "get": {
         "tags": [
           "Users"
