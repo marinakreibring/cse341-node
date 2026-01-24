@@ -1,41 +1,18 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Jewelry Store API",
-    "description": "API for jewelry store items",
+    "title": "User API",
+    "description": "API for managing users",
     "version": "1.0.0"
   },
-  "host": "localhost:8081",
+  "host": "cse341-node-ofy0.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "http",
-    "https"
-  ],
+  "schemes": ["https"],
   "paths": {
-    "/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api-docs/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/jewelry/": {
+    "/professional": {
       "get": {
         "tags": [
-          "Jewelry"
+          "Users"
         ],
         "description": "",
         "produces": [
@@ -44,15 +21,12 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
       "post": {
         "tags": [
-          "Jewelry"
+          "Users"
         ],
         "description": "",
         "parameters": [
@@ -62,31 +36,19 @@
             "schema": {
               "type": "object",
               "properties": {
-                "title": {
+                "firstName": {
                   "example": "any"
                 },
-                "type": {
+                "lastName": {
                   "example": "any"
                 },
-                "price": {
+                "email": {
                   "example": "any"
                 },
-                "material": {
+                "favoriteColor": {
                   "example": "any"
                 },
-                "stone": {
-                  "example": "any"
-                },
-                "stoneId": {
-                  "example": "any"
-                },
-                "description": {
-                  "example": "any"
-                },
-                "handmade": {
-                  "example": "any"
-                },
-                "inStock": {
+                "birthday": {
                   "example": "any"
                 }
               }
@@ -103,10 +65,10 @@
         }
       }
     },
-    "/jewelry/{id}": {
+    "/professional/{id}": {
       "get": {
         "tags": [
-          "Jewelry"
+          "Users"
         ],
         "description": "",
         "parameters": [
@@ -125,7 +87,7 @@
       },
       "put": {
         "tags": [
-          "Jewelry"
+          "Users"
         ],
         "description": "",
         "parameters": [
@@ -141,31 +103,19 @@
             "schema": {
               "type": "object",
               "properties": {
-                "title": {
+                "firstName": {
                   "example": "any"
                 },
-                "type": {
+                "lastName": {
                   "example": "any"
                 },
-                "price": {
+                "email": {
                   "example": "any"
                 },
-                "material": {
+                "favoriteColor": {
                   "example": "any"
                 },
-                "stone": {
-                  "example": "any"
-                },
-                "stoneId": {
-                  "example": "any"
-                },
-                "description": {
-                  "example": "any"
-                },
-                "handmade": {
-                  "example": "any"
-                },
-                "inStock": {
+                "birthday": {
                   "example": "any"
                 }
               }
@@ -183,167 +133,7 @@
       },
       "delete": {
         "tags": [
-          "Jewelry"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/stones/": {
-      "get": {
-        "tags": [
-          "Stones"
-        ],
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Stones"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "color": {
-                  "example": "any"
-                },
-                "origin": {
-                  "example": "any"
-                },
-                "chakra": {
-                  "example": "any"
-                },
-                "meaning": {
-                  "example": "any"
-                },
-                "element": {
-                  "example": "any"
-                },
-                "property": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/stones/{id}": {
-      "get": {
-        "tags": [
-          "Stones"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Stones"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "color": {
-                  "example": "any"
-                },
-                "origin": {
-                  "example": "any"
-                },
-                "chakra": {
-                  "example": "any"
-                },
-                "meaning": {
-                  "example": "any"
-                },
-                "element": {
-                  "example": "any"
-                },
-                "property": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Stones"
+          "Users"
         ],
         "description": "",
         "parameters": [
