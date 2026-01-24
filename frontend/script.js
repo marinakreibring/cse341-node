@@ -6,12 +6,12 @@ async function apiFetch(url) {
 }
 
 const getData = async () => {
-  const data = await apiFetch('http://localhost:8080/professional');
+  const data = await apiFetch('http://localhost:8081/jewelry');
   displayAllData(data);
 };
 
 function displayAllData(data) {
-  displayProfessionalName(data.professionalName);
+  displayItemName(data.itemName);
   displayImage(data.base64Image);
   displayPrimaryDescription(data);
   displayWorkDescription(data);

@@ -2,13 +2,13 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
     info: {
-        title: 'User API',
-        description: 'API for managing users'
+        title: 'Jewelry Store API',
+        description: 'API for jewelry store items'
     },
-    host: 'localhost:8080',
+    host: process.env.RENDER_EXTERNAL_HOSTNAME || 'localhost:8081',
     schemes: ['http', 'https']
 };
 const outputFile = './swagger-output.json';
-const endpointsFiles = ['./app.js'];
+const endpointsFiles = ['./index.js'];
 swaggerAutogen(outputFile, endpointsFiles, doc);
 

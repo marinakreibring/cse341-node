@@ -1,31 +1,39 @@
-### Returns all professional documents from MongoDB
-GET http://localhost:8080/professional
+### Returns all items from MongoDB
+GET http://localhost:8081/jewelry
 
-### Returns a single professional document by MongoDB ObjectId
-GET http://localhost:8080/professional/696bd29c57b4f0df5bf1c522
+### Returns a single item by MongoDB ObjectId
+GET http://localhost:8081/jewelry/6974ad3fe708902b4c7d3e90
 
-### Creates a new professional document
-POST http://localhost:8080/professional
+### Creates a new item
+POST http://localhost:8081/jewelry
 Content-Type: application/json
 
 {    
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "testmail@test.com",
-    "favoriteColor": "yellow",
-    "birthday": "1993-02-08"
+    "title": "Amethyst Dream",
+    "type": "Bracelet",
+    "price": 33.99,
+    "material": "Silver",
+    "stone": "Amethyst",
+    "stoneId": "6974aa27e708902b4c7d3e8c",
+    "handmade": true,
+    "inStock": true,
+    "description": "Handmade bracelet with natural amethyst crystals"
 }
-### Updates an existing professional document by MongoDB ObjectId
-PUT http://localhost:8080/professional/696c0d462374cefc51d30b91
+### Updates an existing item by MongoDB ObjectId
+PUT http://localhost:8081/jewelry/6974ad3fe708902b4c7d3e90
 Content-Type: application/json
 
 {
-    "firstName": "Michael",
-    "lastName": "Doe",
-    "email": "testmailchange@example.com",
-    "favoriteColor": "blue",
-    "birthday": "1995-04-03"
+    "title": "Amethyst Dream",
+    "type": "Bracelet",
+    "price": 25.99,
+    "material": "Silver",
+    "stone": "Amethyst",
+    "stoneId": "6974aa27e708902b4c7d3e8c",
+    "handmade": true,
+    "inStock": true,
+    "description": "Handmade bracelet with natural amethyst crystals"
 }
 ### Deletes a professional document by MongoDB ObjectId
-DELETE http://localhost:8080/professional/696bdd8d51a2014dc6f7ba76
+DELETE http://localhost:8081/jewelry/6974ad3fe708902b4c7d3e90
 
